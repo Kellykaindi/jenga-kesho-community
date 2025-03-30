@@ -1,3 +1,7 @@
+<?php
+include 'connect.php';
+?>
+
 <html>
     <style>
         body{
@@ -7,5 +11,6 @@
             background-position: center center; 
         } 
     </style>
+
     
 </html>
