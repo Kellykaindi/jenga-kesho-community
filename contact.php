@@ -7,27 +7,55 @@ include 'connect.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Continuous Smooth Image Wave</title>
+    <title>Reach Out to Us</title>
     
     <style>
         body {
             margin: 0;
             overflow: hidden; 
-            background-image: url("jkcindex.gif");
+            background-image: url("bg1.jpg");
             background-repeat: no-repeat;
             background-size: cover; /* Ensures full background */
             background-position: center;
             font-family: Arial, sans-serif;
         }
-
         /* Form Styling */
         .contact-form {
             width: 40%;
             margin: 50px auto;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
+            position: relative; /* Needed for pseudo-element */
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Ensures the background does not overflow */
+        }
+
+        /* Adding background image */
+        .contact-form::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('www.jpg'); 
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4; /* Adjust this to change the image transparency */
+            z-index: -2; /* Keeps the background behind everything */
+            border-radius: 10px; /* Matches the form's border-radius */
+        }
+
+        .contact-form::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 165, 0, 0.3); /* Orange overlay with 30% transparency */
+            z-index: -1; /* Keeps overlay above the image but behind text */
+            border-radius: 10px; /* Matches the form's border-radius */
         }
 
         .contact-form h2 {
@@ -61,12 +89,12 @@ include 'connect.php';
         }
 
         .submit-btn {
-            background-color: #28a745;
+            background: orange; 
             color: white;
         }
 
         .clear-btn {
-            background-color: #dc3545;
+            background: orange; 
             color: white;
         }
 
